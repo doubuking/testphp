@@ -1,0 +1,14 @@
+{
+    "name": "testphp/testphp",
+    "description": "Skill check for RPA engineer recruitment",
+    "require": {
+        "phpunit/phpunit": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyGreeter\\": "MyGreeter/"
+        }
+    },
+    "authors": [
+    ]
+}
