@@ -22,12 +22,35 @@ class MyGreeter_Client_Test extends TestCase
 
     public function test_getGreeting()
     {
-        echo($this->greeter->getGreeting());
-
         $this->assertTrue(
             strlen($this->greeter->getGreeting()) > 0
         );
 
+    }
+
+    public function test_ExpectHelloActualHello()
+    {
+
+
+        $time = date("H");
+        if ($time >= 0 && $time < 12){
+            $this->expectOutputString("Good morning");
+
+        }elseif ($time >= 12 && $time < 18){
+            $this->expectOutputString("Good afternoon");
+
+        }else{
+            $this->expectOutputString("Good evening");
+
+        }
+        print $this->greeter->getGreeting();
+
+
+    }
+
+    public function tearDown(): void
+    {
+        unset($this->greeter);
     }
 }
 

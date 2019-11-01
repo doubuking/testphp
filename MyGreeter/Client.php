@@ -9,9 +9,9 @@ namespace MyGreeter;
 ini_set('date.timezone','Asia/Shanghai');
 class Client
 {
-    public function getGreeting(){
+    public function getGreeting():string
+    {
         $time = date("H");
-        echo $time;
         if ($time >= 0 && $time < 12){
             return "Good morning";
         }elseif ($time >= 12 && $time < 18){
